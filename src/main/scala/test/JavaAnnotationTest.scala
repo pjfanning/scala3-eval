@@ -2,7 +2,7 @@ package test
 
 import com.fasterxml.jackson.annotation._
 
-case class JacksonAnnotationTestCaseClass(@JsonProperty("foo") oof:String, bar: String)
+case class JacksonAnnotationTestCaseClass(@JsonProperty("foo") oof: String, bar: String)
 
 object JavaAnnotationTest extends App {
   val cls = classOf[JacksonAnnotationTestCaseClass]
@@ -11,7 +11,8 @@ object JavaAnnotationTest extends App {
 
   val param1 = constructor.getParameters.head
 
-  val annotations = param1.getAnnotations.toSeq
+  println(s"constructor params ${constructor.getParameters.map(_.getName).toSeq}")
 
-  println(s"annotations $annotations")
+  //val annotations = param1.getAnnotations.toSeq
+  //println(s"annotations $annotations")
 }
